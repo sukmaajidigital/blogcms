@@ -15,22 +15,18 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="{{ route('guard.index') }}" class="nav-link {{ request()->routeIs('guard.index') ? 'active' : '' }}">Home</a></li>
-                <li class="nav-item"><a href="{{ route('guard.index') }}" class="nav-link {{ request()->routeIs('') ? 'active' : '' }}">Berita</a></li>
-                <li class="nav-item"><a href="{{ route('guard.index') }}" class="nav-link {{ request()->routeIs('') ? 'active' : '' }}">Produk</a></li>
                 <div class="vr mx-3"></div> <!-- Garis vertikal -->
+                @foreach ($menus as $menu)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route($menu->route) }}">
+                            <i class="{{ $menu->icon }}"></i> {{ $menu->name }}
+                        </a>
+                    </li>
+                @endforeach
+                <div class="vr mx-3"></div> <!-- Garis vertikal -->
+
                 <li class="nav-item"><a href="{{ route('login') }}" class="btn btn-warning">Login</a></li>
             </ul>
         </header>
-        <script>
-            document.getElementById('btnSwitch').addEventListener('click', () => {
-                if (document.documentElement.getAttribute('data-bs-theme') == 'dark') {
-                    document.documentElement.setAttribute('data-bs-theme', 'light')
-                    document.getElementById('btnSwitch').innerHTML = '<i class="fas fa-sun"></i>'
-                } else {
-                    document.documentElement.setAttribute('data-bs-theme', 'dark')
-                    document.getElementById('btnSwitch').innerHTML = '<i class="fas fa-moon"></i>'
-                }
-            })
-        </script>
     </div>
 </div>

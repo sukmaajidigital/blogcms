@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Landing;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,8 +19,11 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'admin',
-            'email' => 'admin@test.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('admin123'),
+        ]);
+        $this->call([
+            LandingSeeder::class,
         ]);
     }
 }

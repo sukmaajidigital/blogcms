@@ -6,11 +6,7 @@
                 <img src="img/assets/assets1.png" class="d-block mx-lg-auto img-fluid" alt="img" width="400" height="500" loading="lazy">
             </div>
             <div class="col-lg-6">
-                <h1 class="display-7 fw-bold text-body-emphasis lh-1 mb-3">{{ $landing->title ?? 'title' }}</h1>
-                <p class="lead  text-body-emphasis lh-1 ">{{ $landing->subtitle ?? 'subtitle' }}</p>
-                <p>
-                    {{ $landing->description ?? 'description' }}
-                </p>
+                <h1 class="display-7 fw-bold text-body-emphasis lh-1 mb-3">{ $viewName }</h1>
             </div>
         </div>
     </div>

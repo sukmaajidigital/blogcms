@@ -7,7 +7,7 @@
                 {{ __('Landing') }}
             </div>
             <div class="flex flex-col md:flex-row flex-wrap gap-4">
-                <input type="text" name="id" value="{{ old('id', optional($landing ?? null)->id) }}">
+                <input type="hidden" name="id" value="{{ old('id', optional($landing ?? null)->id) }}">
                 <div class="flex-1">
                     <label for="title" class="block text-sm font-medium text-gray-700">{{ __('Judul') }}</label>
                     <input id="title" name="title" value="{{ old('title', optional($landing ?? null)->title) }}" type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
